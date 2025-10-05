@@ -1,0 +1,19 @@
+public type Ticket record {|
+    readonly string id;
+    string passengerId;
+    string tripId;
+    string ticketType; // "SINGLE", "DAY_PASS", "WEEKLY"
+    decimal price;
+    TicketStatus status; // CREATED, PAID, VALIDATED, EXPIRED
+    string paymentId?;
+    time:Utc createdAt;
+    time:Utc updatedAt;
+    time:Utc expiresAt; // When ticket becomes invalid
+|};
+
+public enum TicketStatus {
+    CREATED,
+    PAID,
+    VALIDATED, 
+    EXPIRED
+}

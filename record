@@ -2,13 +2,13 @@ public type Ticket record {|
     readonly string id;
     string passengerId;
     string tripId;
-    string ticketType; // "SINGLE", "DAY_PASS", "WEEKLY"
+    string ticketType;  
     decimal price;
-    TicketStatus status; // CREATED, PAID, VALIDATED, EXPIRED
+    TicketStatus status; 
     string paymentId?;
     time:Utc createdAt;
     time:Utc updatedAt;
-    time:Utc expiresAt; // When ticket becomes invalid
+    time:Utc expiresAt;
 |};
 
 public enum TicketStatus {
@@ -17,3 +17,13 @@ public enum TicketStatus {
     VALIDATED, 
     EXPIRED
 }
+
+public type CreateTicketRequest record {|
+    string passengerId;
+    string tripId;
+    string ticketType;
+    decimal price;
+|};
+
+
+

@@ -1,0 +1,15 @@
+[package]
+org = "dsa_group"
+name = "notification_service"
+version = "1.0.0"
+distribution = "slbeta6"
+
+[build-options]
+observabilityIncluded = true
+
+[dependency]
+# Kafka module from Ballerina Central
+[[dependency]]
+org = "ballerinax"
+name = "kafka"
+version = "3.6.0"
